@@ -1,0 +1,13 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "main": "src/processes/main/main.js",
+  "author": "Kevin Nolan",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^14.0.1"
+  }
+}

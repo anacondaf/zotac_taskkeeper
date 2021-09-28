@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zotac@taskeeper</title>
+
+    <!-- JQUERY -->
+    <script src="../../public/static/jquery-3.6.0.min.js"></script>
+
+    <!-- Semantic UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Material Design Icons -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.1.95/css/materialdesignicons.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/index.style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Title header -->
+        <div class="header-wrap">
+            <div class="mh-2 mv-1">
+                <h3 class="header-name">
+                    Welcome back, <span id="username">Duc Khai</span>!
+                </h3>
+            </div>
+        </div>
+
+        <!-- List array -->
+        <div class="list-box">
+            <div class="list-scroll-box">
+                <div class="todolist-wrap ph-1 pv-1">
+                    <div class="todolist">
+                        <div class="checkbox-box">
+                            <input class="checkbox" type="checkbox" name="example">
+                        </div>
+
+                        <div class="list-content">
+                            <div class="tagbox">
+                                <div class="ui red label">Danger</div>
+                            </div>
+                            <div class="title">
+                                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                            </div>
+                            <p><i>By Bob</i></p>
+                        </div>
+
+                        <div class="tools">
+                            <button class="ui icon button">
+                                <i class="trash alternate icon"></i>
+                            </button>
+                            <button class="ui icon button">
+                                <i class="tag icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="todolist-wrap ph-1 pv-1">
+                    <div class="todolist">
+                        <div class="checkbox-box">
+                            <input class="checkbox" type="checkbox" name="example">
+                        </div>
+
+                        <div class="list-content">
+                            <div class="tagbox">
+                                <div class="ui red label">Danger</div>
+                            </div>
+                            <div class="title">
+                                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing
+                                    and typesetting industry</h4>
+                            </div>
+                            <p><i>By Bob</i></p>
+                        </div>
+
+                        <div class="tools">
+                            <button class="ui icon button">
+                                <i class="trash alternate icon"></i>
+                            </button>
+                            <button class="ui icon button">
+                                <i class="tag icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <button class="btn-add-task" id="add-task">
+                <i class="plus icon"></i>
+            </button>
+
+            <div class="ui secondary vertical menu floatmenu">
+                <a class="active item">
+                    <i class="file icon"></i>File
+                </a>
+                <a class="item">
+                    <i class="cog icon"></i>Preference
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../public/static/menu.min.js"></script>
+</body>
+
+</html>
