@@ -1,13 +1,18 @@
 {
   "name": "todolist",
   "version": "1.0.0",
-  "main": "src/processes/main/main.js",
+  "main": "app/processes/main/main.js",
   "author": "Kevin Nolan",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "nodemon --watch . --exec \"electron .\""
   },
   "devDependencies": {
-    "electron": "^14.0.1"
+    "electron": "^14.0.1",
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "semantic-ui-calendar": "0.0.8"
   }
 }

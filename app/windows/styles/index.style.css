@@ -56,7 +56,23 @@ i.icon {
 
 /* TITLE HEADER */
 .header-wrap {
-	border-bottom: 1px solid #ebebeb;
+	background: url("../../../public/assets/morning2.jpg") no-repeat;
+	background-size: cover;
+	background-position: 50% 45%;
+	flex-basis: 25%;
+}
+
+.overlay {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.header-name {
+	color: #fff;
+	font-size: 20px;
 }
 
 /* LIST */
@@ -203,7 +219,7 @@ i.icon {
 }
 
 .btn-add-task {
-	background-color: #464cd6;
+	background-color: #0669fe;
 	color: #fff;
 	border-radius: 50%;
 	width: 40px;
@@ -223,7 +239,7 @@ i.icon {
 }
 
 .btn-add-task:hover {
-	background-color: #393dbb;
+	background-color: #0361f0;
 }
 
 .btn-add-task i {

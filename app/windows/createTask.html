@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Item</title>
+
+    <!-- JQUERY -->
+    <script src="../../public/static/jquery-3.6.0.min.js"></script>
+
+    <!-- Semantic UI -->
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles/addItem.style.css">
+</head>
+
+<body data-theme="light">
+    <div class="add-item-container ph">
+        <textarea id="title-field" class="title-field" rows="2" placeholder="Give a title..."
+            onkeydown="return limitLines(this, event)"></textarea>
+        <br class="item-line-spacing">
+
+        <!-- add-tags -->
+        <div class="tags">
+            <p class="tags-label">Add tags</p>
+            <div class="tags-inner-container">
+                <div class="add-tag">
+                    <i class="plus square outline icon"></i>
+                </div>
+
+                <ul class="tags-container">
+                    <li class="tagbox">
+                        <div class="ui red label">Danger</div>
+                    </li>
+                    <li class="tagbox">
+                        <div class="ui green label">Done</div>
+                    </li>
+                    <li class="tagbox">
+                        <div class="ui yellow label">Important Development</div>
+                    </li>
+                    <li class="tagbox">
+                        <div class="ui pink label">Done</div>
+                    </li>
+                    <li class="tagbox">
+                        <div class="ui purple label">danjdkjandjkandkjsnd</div>
+                    </li>
+
+                    <li class="tagbox">
+                        <div class="ui yellow label">Important Development</div>
+                    </li>
+                    <li class="tagbox">
+                        <div class="ui pink label">Done</div>
+                    </li>
+                    <li class="tagbox">
+                        <div class="ui purple label">danjdkjandjkandkjsnd</div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <br class="item-line-spacing">
+
+        <div class="due-date-wrapper">
+            <div class="due-date-text">
+                <h4>Due date</h4>
+            </div>
+
+            <div class="ui calendar calendar-wrapper" id="standard_calendar">
+                <div class="ui input left icon">
+                    <i class="calendar alternate icon"></i>
+                    <input type="text" placeholder="Date/Time">
+                </div>
+            </div>
+        </div>
+
+        <br class="item-line-spacing">
+
+        <textarea class="write-note-wrapper" placeholder="Write a note..."></textarea>
+
+        <br class="item-line-spacing">
+
+        <div class="subtask-uploadfile-container">
+            <div class="subtask-wrapper">
+                <div class="subtask-container">
+                    <div class="subtask-item">
+                        <i class="tasks icon"></i>
+                        <p>Finish the designs</p>
+                        <i id="remove" class="times icon cross-sign"></i>
+                    </div>
+                    <div class="subtask-item">
+                        <i class="tasks icon"></i>
+                        <p>Diagram</p>
+                        <i id="remove" class="times icon cross-sign"></i>
+                    </div>
+                    <div class="subtask-item">
+                        <i class="tasks icon"></i>
+                        <p>API</p>
+                        <i id="remove" class="times icon cross-sign"></i>
+                    </div>
+                </div>
+                <br class="item-line-spacing">
+
+                <button class="add-subtask">
+                    <i class="plus icon"></i>
+                    Add subtask
+                </button>
+            </div>
+
+            <br class="item-line-spacing">
+
+            <!-- UPLOAD FILE -->
+            <div class="upload-file-wrapper">
+                <div class="choose_file">
+                    <label for="choose_file">
+                        <input type="file" id="choose_file">
+                        <i class="folder icon" id="upload-file-btn"></i>
+                    </label>
+                    <span>Drag/Drop or Browse your files here</span>
+                </div>
+
+                <br class="item-line-spacing">
+
+                <div class="file-list">
+                    <h3>Uploaded Files</h3>
+                    <div class="file-item">
+                        <i class="file icon"></i>
+                        <p>Logo manual.pdf</p>
+                        <i id="remove" class="times icon cross-sign"></i>
+                    </div>
+                    <div class="file-item">
+                        <i class="file icon"></i>
+                        <p>Logo manual.pdf</p>
+                        <i id="remove" class="times icon cross-sign"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br class="item-line-spacing">
+
+        <div class="two-last-btn">
+            <button class="btn add-task">Create</button>
+            <button class="btn cancel">Cancel</button>
+        </div>
+    </div>
+
+    <script src="../processes/renderer/createTask.renderer.js"></script>
+</body>
+
+</html>
