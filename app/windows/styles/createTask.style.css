@@ -14,18 +14,17 @@
 	font-style: normal;
 }
 
-root {
-	--section-font-size: 16px;
-}
-
 * {
 	font-family: "AirbnbMedium";
+	--section-font-size: 15px;
 }
 
 /* Light theme Colors*/
 body[data-theme="light"] {
 	--main-text-color: #000;
 	--main-background-color: #fff;
+	--text-selection-bg-color: #000;
+	--text-selection-color: #fff;
 
 	/* Global var */
 	--filename-add-subtask: #555757;
@@ -43,7 +42,7 @@ body[data-theme="light"] {
 	/*Write note*/
 	--write-bg-color: #fff7e0;
 	--write-placeholder-color: #ac9752;
-	--write-text-color: rgba(49, 49, 49, 0.424);
+	--write-text-color: rgb(41, 41, 41);
 	--write-box-shadow: #f5edd5;
 
 	/*Sub task*/
@@ -72,6 +71,8 @@ body[data-theme="light"] {
 body[data-theme="dark"] {
 	--main-text-color: #fff;
 	--main-background-color: #1c1d21;
+	--text-selection-bg-color: #a94c07;
+	--text-selection-color: #fff;
 
 	/* Title dield */
 	--title-field-placeholder: #fff;
@@ -172,7 +173,12 @@ textarea:focus {
 .title-field {
 	font-size: 20px;
 	background-color: var(--main-background-color);
-	color: var(--title-field-placeholder);
+	color: var(--main-text-color);
+}
+
+.title-field::selection {
+	background-color: var(--text-selection-bg-color);
+	color: var(--text-selection-color);
 }
 
 .title-field::-webkit-scrollbar {
@@ -266,22 +272,27 @@ textarea:focus {
 
 /* ----WRITE-NOTE---- */
 
-.write-note-wrapper {
+.write-note {
 	border-radius: 5px;
 	padding: 1.5em 1em;
 	box-sizing: border-box;
 	min-height: 180px;
 	box-shadow: 2px 5px 7px var(--write-box-shadow);
-	font-size: var(--section-font-size);
+	font-size: 16px;
 	background-color: var(--write-bg-color);
 	color: var(--write-text-color);
 }
 
-.write-note-wrapper::placeholder {
+.write-note::selection {
+	background-color: var(--text-selection-bg-color);
+	color: var(--text-selection-color);
+}
+
+.write-note::placeholder {
 	color: var(--write-placeholder-color);
 }
 
-.write-note-wrapper::-webkit-scrollbar {
+.write-note::-webkit-scrollbar {
 	width: 5px;
 }
 
@@ -348,6 +359,7 @@ textarea:focus {
 .subtask-item:hover > p {
 	background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
 	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 

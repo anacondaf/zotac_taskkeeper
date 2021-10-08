@@ -176,7 +176,8 @@ i.icon {
 	max-width: 600px;
 }
 
-.list-content p {
+.list-content .due-date {
+	display: flex;
 	margin-top: 3px;
 	font-size: 13px;
 	color: rgba(0, 0, 0, 0.616);
@@ -193,7 +194,7 @@ i.icon {
 }
 
 .tools .button {
-	background: none;
+	background-color: transparent !important;
 	outline: none;
 	border: none;
 	width: 40px;
@@ -204,12 +205,12 @@ i.icon {
 	font-size: 14px;
 }
 
-.tools .button:hover {
-	background-color: rgba(0, 0, 0, 0.123);
+.tools .button:hover > .trash {
+	color: #e42222;
 }
 
-.tools .button:hover > .icon {
-	color: rgba(0, 0, 0, 0.938);
+.tools .button:hover > .tag {
+	color: green;
 }
 
 /* FOOTER */

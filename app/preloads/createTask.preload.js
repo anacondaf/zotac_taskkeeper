@@ -1,4 +1,4 @@
-const { ipcRenderer } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 ipcRenderer.on("theme:dark-mode", () => {
 	document.body.setAttribute("data-theme", "dark");
@@ -9,8 +9,9 @@ ipcRenderer.on("theme:light-mode", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-	const addTaskButton = document.querySelector(".add-task");
-	addTaskButton.addEventListener("click", (event) => {
-		ipcRenderer.invoke("test", "A", "B");
+	contextBridge.exposeInMainWorld("createTask", {
+		invokeCreateTask: (taskInfo) => {
+			ipcRenderer.invoke("createNewTask", { taskInfo });
+		},
 	});
 });

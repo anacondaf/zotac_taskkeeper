@@ -1,10 +1,9 @@
 const calendarAction = () => {
-	const $calendar = $("#standard_calendar").calendar({
+	const $calendar = $("#standard_calendar");
+
+	$calendar.calendar({
 		ampm: false,
 		today: true,
-		onChange: (d) => {
-			console.log(d);
-		},
 	});
 
 	let today = new Date(Date.now());
@@ -34,8 +33,23 @@ const chooseFileButton = () => {
 	});
 };
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
 	calendarAction();
-	limitLines();
+	// limitLines();
 	chooseFileButton();
+
+	const addTaskButton = document.querySelector(".add-task");
+
+	addTaskButton.addEventListener("click", (event) => {
+		let title = document.querySelector("#title-field");
+		let dueDateTime = $("#standard_calendar")
+			.calendar("get date")
+			.toLocaleString("en-Gb")
+			.split(",");
+
+		window["createTask"].invokeCreateTask({
+			title: title.value,
+			due_date: dueDateTime,
+		});
+	});
 });

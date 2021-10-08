@@ -26,8 +26,6 @@ function createTaskWindow() {
 		height: 600,
 		resizable: false,
 		webPreferences: {
-			// contextIsolation: false,
-			// nodeIntegration: true,
 			preload: path.join(__dirname, "../../preloads/createTask.preload.js"),
 		},
 	});
@@ -36,18 +34,12 @@ function createTaskWindow() {
 
 	//close newTaskWindow
 	newTaskWindow.on("close", () => {
-		newTaskWindow.close();
+		newTaskWindow = null;
 	});
 }
 
 function createMenu() {
 	const menuTemplate = [
-		{
-			label: "Add Item",
-			click: () => {
-				createTaskWindow();
-			},
-		},
 		{
 			label: "Settings",
 			submenu: [
@@ -73,7 +65,7 @@ function createMenu() {
 	];
 
 	if (process.env.NODE_ENV !== "production") {
-		menuTemplate[1].submenu.push({
+		menuTemplate[0].submenu.push({
 			label: "Toggle DevTools",
 			accelerator: process.platform === "darwin" ? "Command+I" : "Ctrl+I",
 			click: (item, BrowserWindow) => {
@@ -98,6 +90,11 @@ app.on("window-all-closed", () => {
 });
 
 //IPC Controllers
-ipcMain.handle("test", async (event, ...args) => {
-	mainWindow.webContents.send("send-to-main-window", args);
+ipcMain.handle("createNewTask", async (event, { taskInfo }) => {
+	mainWindow.webContents.send("add_task_to_window", { taskInfo });
+	newTaskWindow.close();
+});
+
+ipcMain.handle("openCreateTaskWindow", async (event) => {
+	createTaskWindow();
 });
